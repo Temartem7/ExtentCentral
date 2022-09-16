@@ -50,12 +50,14 @@ public class BaseClass {
 		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
 		File src = takesScreenshot.getScreenshotAs(OutputType.FILE);
 		String path = System.getProperty("user.dir") + "\\Screenshot\\" + fileName + "_" + dateName + ".png";
-		File finalPath = new File(path);
+//		File finalPath = new File(path);
 		try {
-			FileUtils.copyFile(src, finalPath);
+			FileUtils.copyFile(src, new File(path));
 		} catch (Exception e) {
 			e.getMessage();
 		}
+		//Jenkins config
+		String newImgString = "http://localhost:8080/job/ExtentReportJenkins/ws/ExtentReportDemo2/Screenshot/" + fileName + "_" + dateName + ".png";
 		return path;
 	}
 	
