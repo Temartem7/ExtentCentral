@@ -25,7 +25,7 @@ public class qStoreTest extends BaseClass{
 		driver.findElement(By.id("passwd")).sendKeys("admin@123");
 		driver.findElement(By.id("SubmitLogin")).click();
 		String actTitle=driver.getTitle();
-		String expTitle="My account - My Store_1";
+		String expTitle="My account - My Store";
 		Assert.assertEquals(actTitle, expTitle);
 	}
 	
